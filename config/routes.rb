@@ -1,4 +1,8 @@
 Quackernews::Application.routes.draw do
+  resources :comments
+
+  resources :things
+
   resources :posts
   root :to => 'posts#index'
 

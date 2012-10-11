@@ -31,9 +31,9 @@
           <a class="brand" href="#">Quackernews</a>
           <div class="container nav-collapse">
             <ul class="nav">
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
+              <li><%= link_to "Top", posts_path(:filter => 'top')  %></li>
+              <li><%= link_to "Latest", posts_path(:filter => )  %></li>
+              <li><%= link_to "Submit", "/path3"  %></li>
 			<li><%= form_tag({:controller => 'posts', :action => 'index'}, {:method => 'get', :class => 'form-search'}) do %>
 				<%= text_field_tag(:q, nil, :class => 'input-medium_search-query') %>
 				<%= submit_tag("Search", :class => 'btn') %>
