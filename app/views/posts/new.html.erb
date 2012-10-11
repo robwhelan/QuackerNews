@@ -1,10 +1,29 @@
 <%= render "shared/header" %>
+<%= link_to "Home", root_path, :confirm => "Are you sure?" %>
 <h2>New Post</h2>
+
 <%= form_for @post do |f| %>
+<% if @post.errors.any? %>
+	<div id="errorExplanation" class="alert alert-error">
+		<h2><%= pluralize(@post.errors.count, "error") %> prohibited from being saved.</h2>
+		<ul>
+			<% @post.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+			<% end %>
+		</ul>
+	</div>
+<% end %>			
+
 	<p>
-		<%= f.label :title %>
+		<%= f.label :title, 'Subject' %>
 		<%= f.text_field :title %>
 	</p>
+
+	<p>
+		<%= f.label :link, 'Link' %>
+		<%= f.url_field :link %>
+	</p>
+
 	
 	<p>
 		<%= f.submit 'create' %>

@@ -34,6 +34,10 @@
               <li><%= link_to "Link1", "/path1"  %></li>
               <li><%= link_to "Link2", "/path2"  %></li>
               <li><%= link_to "Link3", "/path3"  %></li>
+			<li><%= form_tag({:controller => 'posts', :action => 'index'}, {:method => 'get', :class => 'form-search'}) do %>
+				<%= text_field_tag(:q, nil, :class => 'input-medium_search-query') %>
+				<%= submit_tag("Search", :class => 'btn') %>
+				<% end %>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
